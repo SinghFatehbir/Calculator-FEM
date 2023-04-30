@@ -1,0 +1,311 @@
+:root {
+    /*** Default dark theme***/
+
+    /* Backgrounds */
+
+    /* main background */
+    --color-main-bg: hsl(222, 26%, 31%);
+    /* toggle background, keypad background */
+    --color-keypad-bg: hsl(223, 31%, 20%);
+    /* screen background */
+    --color-screen-bg: hsl(224, 36%, 15%);
+
+    /* Keys */
+
+    /* key background */
+    --color-key-bg-1: hsl(225, 21%, 49%);
+    /* key shadow */
+    --color-key-shadow-1: hsl(224, 28%, 35%);
+    /* key background, toggle */
+    --color-key-bg-2: hsl(6, 63%, 50%);
+    /* key shadow */
+    --color-key-shadow-2: hsl(6, 70%, 34%);
+    /* key background */
+    --color-key-bg-3: hsl(30, 25%, 89%);
+    /* key shadow */
+    --color-key-shadow-3: hsl(28, 16%, 65%);
+
+    /* Text */
+
+    --color-text-keys: hsl(221, 14%, 31%);
+    --color-text-primary: hsl(0, 0%, 100%);
+
+    /* Hover colors */
+
+    --color-hover-keys-1: hsl(225, 21%, 70%);
+    --color-hover-keys-2: hsl(6, 63%, 60%);
+    --color-hover-keys-3: hsl(30, 25%, 100%);
+
+}
+
+
+/* css resets start */
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+html {
+    font-size: 32px;
+}
+
+/* css resets ends */
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    height: 100dvh;
+    background-color: var(--color-main-bg);
+    display: grid;
+    place-items: center;
+}
+
+/* Mobile styles first */
+
+main {
+    width: 10.25rem;
+}
+
+.heading-toggle-container {
+    color: var(--color-text-primary);
+    margin-bottom: 0.94rem;
+}
+
+.heading-toggle-container .heading-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-numbers {
+    text-align: right;
+    font-size: 0.4rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: -0.1rem;
+    padding-right: 0.1rem;
+    width: 100%;
+}
+
+.heading-toggle-container p {
+    font-size: 0.37rem;
+    letter-spacing: 0.03rem;
+    margin-left: auto;
+    margin-right: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+
+/* Toggle button with 3 positions styles start*/
+.theme-toggle {
+    float: right;
+    background: var(--color-keypad-bg);
+    padding: 3px;
+    border-radius: 50vh;
+    width: 2.18rem;
+}
+
+.theme-toggle input {
+    position: absolute;
+    opacity: 0;
+}
+
+.theme-toggle input+label {
+    padding: 10.55px;
+    float: left;
+    cursor: pointer;
+}
+
+.theme-toggle input:checked+label {
+    aspect-ratio: 1 / 1;
+    border-radius: 50vh;
+}
+
+/* Using HSL values to prevent them changing from javascript */
+
+.theme-toggle input:checked+label[for="dark"] {
+    background: hsl(6, 70%, 34%);
+}
+
+.theme-toggle input:checked+label[for="dark"]:hover {
+    background: hsl(6, 63%, 60%);
+}
+
+.theme-toggle input:checked+label[for="light"] {
+    background: hsl(25, 98%, 40%);
+}
+
+.theme-toggle input:checked+label[for="light"]:hover {
+    background: hsl(25, 98%, 60%);
+}
+
+.theme-toggle input:checked+label[for="midnight"] {
+    background: hsl(176, 100%, 44%);
+}
+
+.theme-toggle input:checked+label[for="midnight"]:hover {
+    background: hsl(176, 100%, 64%);
+}
+
+.theme-toggle input[id="dark"]:hover {
+    background-color: var(--color-hover-keys-2);
+}
+
+/* Toggle button with 3 positions styles end */
+
+.screen {
+    background-color: var(--color-screen-bg);
+    height: 2.75rem;
+    border-radius: 10px;
+    padding: 0 0.7rem;
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/* buttons container */
+
+.input-buttons {
+    background-color: var(--color-keypad-bg);
+    border-radius: 10px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.41rem;
+    position: relative;
+}
+
+button {
+    height: 2rem;
+    width: 1.875rem;
+    color: var(--color-text-keys);
+    background-color: var(--color-key-bg-3);
+    border-radius: 5px;
+    border-bottom: 4px solid var(--color-key-shadow-3);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-top: 0.3rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-hover-keys-3);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* buttons with big size */
+
+.big-button {
+    width: 4.165rem;
+}
+
+/* special styles for delete, reset and equal button */
+
+.del,
+.reset {
+    background-color: var(--color-key-bg-1);
+    border-bottom-color: var(--color-key-shadow-1);
+    color: var(--color-text-primary);
+    font-size: 0.65rem;
+    padding-top: 0.1rem;
+}
+
+.del:hover,
+.reset:hover {
+    background-color: var(--color-hover-keys-1);
+}
+
+.equal {
+    background-color: var(--color-key-bg-2);
+    border-bottom-color: var(--color-key-shadow-2);
+    color: var(--color-text-primary);
+    font-size: 0.65rem;
+    padding-top: 0.1rem;
+}
+
+.equal:hover {
+    background-color: var(--color-hover-keys-2);
+}
+
+.attribution {
+    display: none;
+}
+
+/* Desktop styles */
+
+@media (min-width: 560px) {
+    main {
+        width: 16.875rem;
+    }
+
+    .screen {
+        height: 4rem;
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    button {
+        width: 3.125rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
+
+    .input-buttons {
+        gap: 0.75rem;
+        padding: 0.94rem;
+    }
+
+    .del,
+    .reset,
+    .equal {
+        font-size: 0.85rem;
+    }
+
+    .big-button {
+        width: 7.06rem;
+    }
+
+    .attribution {
+        display: block;
+        position: absolute;
+        letter-spacing: 0.02rem;
+        bottom: 1px;
+        left: 245px;
+        font-size: 9px;
+        color: var(--color-key-bg-1);
+    }
+
+    .attribution a {
+        color: var(--color-key-shadow-2);
+    }
+
+}
