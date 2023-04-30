@@ -29,12 +29,12 @@
         <h1>calc</h1>
         <p>THEME</p>
         <div class="theme-toggle">
-          <input id="dark" name="theme" value="dark" type="radio" checked="checked" />
-          <label for="dark" onclick="darkTheme()" class="dark"></label>
-          <input id="light" name="theme" value="light" type="radio" />
-          <label for="light" onclick="lightTheme()" class="light"></label>
-          <input id="midnight" name="theme" value="midnight" type="radio" />
-          <label for="midnight" onclick="midnightTheme()" class="midnight"></label>
+          <input id="dark" name="theme" onclick="darkTheme()" type="radio" checked="checked" />
+          <label for="dark" class="dark sr-only">dark</label>
+          <input id="light" name="theme" onclick="lightTheme()" type="radio" />
+          <label for="light" class="light sr-only">light</label>
+          <input id="midnight" name="theme" onclick="midnightTheme()" type="radio" />
+          <label for="midnight" class="midnight sr-only">midnight</label>
         </div>
       </div>
     </div>

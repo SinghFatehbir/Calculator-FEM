@@ -102,7 +102,7 @@ main {
     text-align: right;
     font-size: 0.4rem;
     letter-spacing: 0.2rem;
-    margin-bottom: -0.1rem;
+    margin-bottom: 0.1rem;
     padding-right: 0.1rem;
     width: 100%;
 }
@@ -112,66 +112,60 @@ main {
     letter-spacing: 0.03rem;
     margin-left: auto;
     margin-right: 0.8rem;
-    margin-top: 0.2rem;
+    margin-top: 0.1rem;
 }
 
+/* Toggle styles*/
 
-/* Toggle button with 3 positions styles start*/
 .theme-toggle {
-    float: right;
-    background: var(--color-keypad-bg);
-    padding: 3px;
+    width: fit-content;
     border-radius: 50vh;
-    width: 2.18rem;
+    height: 26px;
+    width: 70px;
+    padding: 4px;
+    background-color: hsl(223, 31%, 20%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.theme-toggle input {
-    position: absolute;
-    opacity: 0;
-}
-
-.theme-toggle input+label {
-    padding: 10.55px;
-    float: left;
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50vh;
+    border: none;
+    background-color: hsl(223, 31%, 20%);
     cursor: pointer;
 }
 
-.theme-toggle input:checked+label {
-    aspect-ratio: 1 / 1;
-    border-radius: 50vh;
-}
-
-/* Using HSL values to prevent them changing from javascript */
-
-.theme-toggle input:checked+label[for="dark"] {
+.theme-toggle input:checked[id="dark"] {
     background: hsl(6, 70%, 34%);
 }
 
-.theme-toggle input:checked+label[for="dark"]:hover {
+.theme-toggle input:checked[id="dark"]:hover {
     background: hsl(6, 63%, 60%);
 }
 
-.theme-toggle input:checked+label[for="light"] {
+.theme-toggle input:checked[id="light"] {
     background: hsl(25, 98%, 40%);
 }
 
-.theme-toggle input:checked+label[for="light"]:hover {
+.theme-toggle input:checked[id="light"]:hover {
     background: hsl(25, 98%, 60%);
 }
 
-.theme-toggle input:checked+label[for="midnight"] {
+.theme-toggle input:checked[id="midnight"] {
     background: hsl(176, 100%, 44%);
 }
 
-.theme-toggle input:checked+label[for="midnight"]:hover {
+.theme-toggle input:checked[id="midnight"]:hover {
     background: hsl(176, 100%, 64%);
 }
 
-.theme-toggle input[id="dark"]:hover {
-    background-color: var(--color-hover-keys-2);
-}
-
-/* Toggle button with 3 positions styles end */
+/* Toggle styles end */
 
 .screen {
     background-color: var(--color-screen-bg);
